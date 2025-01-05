@@ -7,7 +7,7 @@ Follow these steps to set up JetBrains Mono Nerd Font and Starship prompt for yo
 Starship works best with a Nerd Font for symbols and special characters. We recommend JetBrains Mono Nerd Font.
 
 ### 1.1 Download JetBrains Mono Nerd Font
-1. Visit the [JetBrains Mono Nerd Font GitHub Releases](https://github.com/ryanoasis/nerd-fonts/releases).
+1. Visit the [JetBrains Mono Nerd Font](https://www.nerdfonts.com/font-downloads).
 2. Download the latest version of the font (e.g., `JetBrainsMono.zip`).
 
 ### 1.2 Install the Font
