@@ -1,0 +1,73 @@
+add_newline = true
+command_timeout = 1000
+format = """$time$os$username$directory$git_branch$git_status$docker_context"""
+
+# Charakter-Modul: Success- und Error-Symbole
+[character]
+success_symbol = "[➜](bold green)"  # Neutraler Erfolgssymbol
+error_symbol = "[✖️](bold red)"      # Fehlersymbol
+
+[os]
+format = '[$symbol](bold white) '   
+disabled = false
+
+[os.symbols]
+Windows = '🪟 '    # Symbol für Windows
+Arch = '🖥️ '      # Symbol für Arch Linux
+Ubuntu = '🐧 '     # Symbol für Ubuntu (Pinguin)
+Macos = '🍏 '      # Symbol für macOS (Apfel)
+
+[username]
+style_user = 'white bold'
+style_root = 'black bold'
+format = '[$user]($style) '
+disabled = false
+show_always = true
+
+# Pfad-Modul: Verzeichnis mit Ordnersymbol
+[directory]
+truncation_length = 3               # Kürzt den Pfad auf 3 Ebenen
+truncation_symbol = "…/"            # Kürzungssymbol
+format = "📂 [$path]($style) "      # Ordnersymbol vor dem Pfad
+style = "bold blue"
+
+# Git-Branch-Modul: Branch anzeigen
+[git_branch]
+symbol = "🌿 "                      # Git-Branch-Symbol
+style = "bold yellow"
+format = "[$symbol$branch]($style) "  # Anzeige des Branches
+
+# Docker-Modul: Anzeige für Docker-Umgebung
+[docker_context]
+symbol = "🐳 "                      # Docker-Symbol
+format = "in [$symbol$context]($style) "  # Zeigt Docker-Umgebung an
+style = "bold cyan"
+only_with_files = false             # Immer anzeigen, wenn ein Docker-Kontext aktiv ist
+
+# Node.js-Modul: Node-Version anzeigen
+[nodejs]
+symbol = "⬢ "                       # Node.js-Symbol
+style = "bold green"
+format = "via [$symbol$version]($style) " # Zeigt Node-Version an, falls vorhanden
+
+# Git-Status-Modul: Status anzeigen
+[git_status]
+format = '([🔄 $all_status$ahead_behind]($style)) '
+style = "bold red"
+conflicted = "⚠️ "
+ahead = "⇡ "
+behind = "⇣ "
+diverged = "⇕ "
+untracked = "❓ "
+stashed = "💾 "
+modified = "✏️ "
+staged = "✅ "
+renamed = "🔀 "
+deleted = "❌ "
+
+# Zeit-Modul: Aktuelle Zeit anzeigen (optional)
+[time]
+disabled = false                    # Zeitmodul aktivieren
+format = "🕒 [$time]($style) "       # Zeit vor jeder Eingabe
+time_format = "%H:%M:%S"            # Zeit im 24-Stunden-Format
+style = "bold white"
